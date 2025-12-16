@@ -34,7 +34,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation - Top Right (only ABOUT and CONTACT) */}
-      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-6 py-3 rounded-full bg-white/45 backdrop-blur-md border border-white/30 shadow-lg">
+      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-6 py-3 rounded-full bg-[#98c2c9] border border-white/30 shadow-lg">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -64,11 +64,11 @@ const Navbar = () => {
 
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-zinc-900 border-l border-white/10 z-50 transform transition-transform duration-300 md:hidden
+        className={`fixed top-0 right-0 h-full w-64 bg-white/45 backdrop-blur-md border-l border-white/30 z-50 transform transition-transform duration-300 md:hidden
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
-          className="absolute top-5 right-5 text-white"
+          className="absolute top-5 right-5 text-black"
           onClick={() => setIsOpen(false)}
         >
           <X size={28} />
@@ -79,7 +79,7 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className="text-white/90 text-lg text-left hover:text-white transition"
+              className="text-black/90 text-lg text-left font-medium hover:bg-white/30 hover:backdrop-blur-sm px-4 py-2 rounded-lg transition-all"
             >
               {item.label}
             </button>
