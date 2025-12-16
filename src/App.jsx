@@ -1,5 +1,5 @@
 import Navbar from './Pages/Navbar/Navbar.jsx';
-import Hero from './Pages/Hero/Hero';
+import HeroWithClouds from './Pages/Hero/Hero';
 import About from './Pages/About/About';
 import Timeline from './Pages/Timeline/Timeline.jsx';
 import FAQ from './Pages/FAQ/faq.jsx';
@@ -14,7 +14,9 @@ function App() {
       }}
     >
       <Navbar />
-      <Hero />
+      <section id="home" className="relative z-10">
+        <HeroWithClouds />
+      </section>
 
       {/* Background Decorative Elements */}
       <div className="fixed inset-0 pointer-events-none -z-0">
