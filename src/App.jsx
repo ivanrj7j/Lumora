@@ -143,18 +143,64 @@ function App() {
       />
 
 
-      {/* Combined About, Timeline, and FAQ in a single box */}
-      <section id="about" className="py-4 md:py-6 relative z-10">
-        <div className="max-w-6xl mx-4 md:mx-auto px-4 md:px-6 lg:px-8 my-0 md:my-4 bg-white/70 backdrop-blur-md rounded-3xl border border-white/30 shadow-xl p-8 md:p-12 relative z-20">
-          <About />
-          <div id="timeline">
-            <Timeline />
-          </div>
-          <div id="faq">
-            <FAQ />
-          </div>
+      <div className="relative">
+
+        <div className="relative z-10">
+          <section id="about" className="relative" style={{ minHeight: '100vh' }}>
+            <div
+              className="absolute inset-0 -z-10"
+              style={{
+                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                filter: 'brightness(0.9)'
+              }}
+            />
+            <div className="container mx-auto px-6 h-full flex items-center justify-center">
+              <div className="max-w-4xl w-full bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                <About />
+              </div>
+            </div>
+          </section>
+          
+          <section id="timeline" className="relative" style={{ minHeight: '100vh' }}>
+            <div
+              className="absolute inset-0 -z-10"
+              style={{
+                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                filter: 'brightness(0.9)'
+              }}
+            />
+            <div className="container mx-auto px-6 h-full flex items-center justify-center">
+              <div className="max-w-4xl w-full bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                <Timeline />
+              </div>
+            </div>
+          </section>
+          
+          <section id="faq" className="relative" style={{ minHeight: '100vh' }}>
+            <div
+              className="absolute inset-0 -z-10"
+              style={{
+                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                filter: 'brightness(0.9)'
+              }}
+            />
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                <FAQ />
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <Footer />
     </div>

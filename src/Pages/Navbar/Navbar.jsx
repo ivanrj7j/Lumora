@@ -14,10 +14,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { label: "HOME", id: "home" },
-    { label: "ABOUT", id: "about" },
-    { label: "TIMELINE", id: "timeline" },
-    { label: "FAQ", id: "faq" }
+    { label: "HOME", id: "home", hover: "hover:bg-green-500 hover:text-white" },
+    { label: "ABOUT", id: "about", hover: "hover:bg-red-500 hover:text-white" },
+    { label: "TIMELINE", id: "timeline", hover: "hover:bg-blue-500 hover:text-white" },
+    { label: "FAQ", id: "faq", hover: "hover:bg-yellow-400 hover:text-black" }
   ];
 
   return (
@@ -79,7 +79,7 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className="text-black/90 text-lg text-left font-medium hover:bg-white/30 hover:backdrop-blur-sm px-4 py-2 rounded-lg transition-all"
+              className={`text-black/90 text-lg text-left font-medium px-4 py-2 rounded-lg transition-all ${item.hover} hover:backdrop-blur-sm`}
             >
               {item.label}
             </button>
