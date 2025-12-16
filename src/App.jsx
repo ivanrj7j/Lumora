@@ -4,15 +4,17 @@ import About from './Pages/About/About';
 import Timeline from './Pages/Timeline/Timeline.jsx';
 import FAQ from './Pages/FAQ/faq.jsx';
 import Footer from './Pages/Footer/Footer.jsx';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <div
-      className="min-h-screen relative overflow-x-hidden"
+      className="min-h-screen relative overflow-x-hidden cursor-none"
       style={{
         background: 'linear-gradient(135deg, #bfffe0 0%, #dcfff4 30%, #e6ebff 65%, #dff3ff 100%)'
       }}
     >
+      <CustomCursor />
       <Navbar />
       <section id="home" className="relative z-10">
         <HeroWithClouds />
