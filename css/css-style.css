@@ -301,14 +301,14 @@ button:focus {
 	background-color: #ff68ca;
 }
 .yellow_bg {
-	background-color: #d4f5d0; /* soft light green instead of yellow */
+	background-color: #d4e7ff; /* soft light blue instead of yellow/green */
 }
 .blue_bg,
 .v_royal_blue {
-	background-color: #223422; /* darker green base for sections like FAQ */
+	background-color: #1e2740; /* dark navy/blue base for sections like FAQ */
 }
 .blue_dark_bg {
-	background-color: #8fbf7a; /* medium green replacing dark yellow tone */
+	background-color: #365a9c; /* medium blue tone for banner/token bg */
 }
 .purple_bg {
 	background-color: #6000b5;
@@ -337,18 +337,18 @@ button:focus {
     z-index: 5;
 }
 .gradient_box {
-	/* keep pink accent but replace yellow with green */
-	background: -webkit-linear-gradient(left, #ff67cb 0%, #8fbf7a 99%) !important;
-	background: linear-gradient(to right, #ff67cb 0%, #8fbf7a 99%) !important;
+	/* keep pink accent but pair with blue instead of green */
+	background: -webkit-linear-gradient(left, #ff67cb 0%, #4f8ad9 99%) !important;
+	background: linear-gradient(to right, #ff67cb 0%, #4f8ad9 99%) !important;
 }
 .gradient_box2 {
-	/* darker green gradient (used on hero/timeline background) */
-	background: -moz-linear-gradient(180deg, rgba(40,65,40,1) 0%, rgba(34,52,34,1) 50%, rgba(21,33,21,1) 100%); /* ff3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(40,65,40,1)), color-stop(50%, rgba(34,52,34,1)), color-stop(100%, rgba(21,33,21,1))); /* safari4+,chrome */
-	background: -webkit-linear-gradient(180deg, rgba(40,65,40,1) 0%, rgba(34,52,34,1) 50%, rgba(21,33,21,1) 100%); /* safari5.1+,chrome10+ */
-	background: -o-linear-gradient(180deg, rgba(40,65,40,1) 0%, rgba(34,52,34,1) 50%, rgba(21,33,21,1) 100%); /* opera 11.10+ */
-	background: -ms-linear-gradient(180deg, rgba(40,65,40,1) 0%, rgba(34,52,34,1) 50%, rgba(21,33,21,1) 100%); /* ie10+ */
-	background: linear-gradient(270deg, rgba(40,65,40,1) 0%, rgba(34,52,34,1) 50%, rgba(21,33,21,1) 100%); /* w3c */ 
+	/* darker blue gradient (used on hero/timeline background) */
+	background: -moz-linear-gradient(180deg, rgba(25,39,77,1) 0%, rgba(18,30,60,1) 50%, rgba(10,17,41,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(25,39,77,1)), color-stop(50%, rgba(18,30,60,1)), color-stop(100%, rgba(10,17,41,1))); /* safari4+,chrome */
+	background: -webkit-linear-gradient(180deg, rgba(25,39,77,1) 0%, rgba(18,30,60,1) 50%, rgba(10,17,41,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(180deg, rgba(25,39,77,1) 0%, rgba(18,30,60,1) 50%, rgba(10,17,41,1) 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(180deg, rgba(25,39,77,1) 0%, rgba(18,30,60,1) 50%, rgba(10,17,41,1) 100%); /* ie10+ */
+	background: linear-gradient(270deg, rgba(25,39,77,1) 0%, rgba(18,30,60,1) 50%, rgba(10,17,41,1) 100%); /* w3c */ 
 }
 .section_gradiant {
 	background: -webkit-linear-gradient(to bottom, rgba(32,18,111,1) 0%,rgba(5,45,133,1) 100%);
@@ -466,7 +466,7 @@ button:focus {
 	top: 0;
 	width: 51%;
 	height: 100%;
-	background-color: #8fbf7a; /* mid green instead of yellow */
+	background-color: #365a9c; /* mid blue instead of yellow/green */
 	z-index: 999;
 	-webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
 	-moz-transform: translateX(0); 
@@ -523,7 +523,7 @@ button:focus {
 }
 .v_blue_light #loader-wrapper .loader-section,
 .v_royal_blue #loader-wrapper .loader-section {
-	background-color: #3f5c3a; /* darker army green for loader panels */
+	background-color: #24335a; /* darker navy blue for loader panels */
 }
 .v_light_purple #loader-wrapper .loader-section {
 	background-color: #4e0094;
@@ -1101,8 +1101,8 @@ header {
 	height: 110px;
 	padding: 25px 50px;
 	transition: all 0.4s ease 0s;
-	/* Match footer gradient */
-	background: linear-gradient(135deg, #5f8c5a 0%, #3f5c3a 50%, #2e422a 100%);
+	/* Match new blue footer-style gradient */
+	background: linear-gradient(135deg, #5b8cd9 0%, #35538f 50%, #24335a 100%);
 }
 .hb_box_shadow {
 	box-shadow: 0 0 1px rgba(255,255,255,0.3);
@@ -1150,7 +1150,7 @@ header .navbar-toggler:hover .ion-close {
 .nav-fixed,
 header.active,
 .spop {
-	background: linear-gradient(135deg, #5f8c5a 0%, #3f5c3a 50%, #2e422a 100%);
+	background: linear-gradient(135deg, #5b8cd9 0%, #35538f 50%, #24335a 100%);
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 header.nav-fixed {
@@ -1231,7 +1231,7 @@ header a:hover,
 	width: auto;
 }
 .navbar-nav .dropdown-menu {
-	background-color: #304a30; /* dark green for mobile / hamburger dropdown */
+	background-color: #24335a; /* dark navy blue for mobile / hamburger dropdown */
 	border: 0;
 	border-radius: 0;
 	margin: 0;
@@ -1351,7 +1351,7 @@ header a:hover,
 .v_royal_blue .navbar-nav .dropdown-menu,
 .v_royal_blue .lng_dropdown .ddChild,
 .v_royal_blue .spop   {
-	background-color: #304a30; /* match dark green navbar when using royal_blue theme */
+	background-color: #24335a; /* match dark blue navbar when using royal_blue theme */
 }
 .v_light_purple .nav-fixed, 
 .v_light_purple header.active,
@@ -1502,7 +1502,7 @@ header a:hover,
 .tk_counter_inner .progress, 
 .tk_counter_inner .progress-bar {
 	border-radius: 20px;
-	color: #e5f7e0; /* soft light green text instead of pale yellow */
+	color: #e3edff; /* soft light blue text */
 	font-size: 14px;
 	text-align: right;
 }
@@ -1519,7 +1519,7 @@ header a:hover,
 	position: relative;
 }
 .tk_counter_inner .progress-bar {
-	background: linear-gradient(90deg, #6fa66a 0%, #a4d39a 100%); /* green fill instead of solid white */
+	background: linear-gradient(90deg, #4f8ad9 0%, #9cc0ff 100%); /* blue fill instead of solid white/green */
     font-weight: 600;
 }
 .token_box .progress-bar-success {
@@ -5193,7 +5193,7 @@ text-align: justify;
 13. FOOTER SECTION
 *===================================*/
 #footer{
-	background:#3f5c3a;
+	background:#24335a; /* dark blue to match new palette */
 
 }
 .top_footer {
