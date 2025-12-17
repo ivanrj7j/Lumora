@@ -11,6 +11,23 @@ body {
   --cursor-blue: #3b82f6; /* Tailwind blue-500 */
 }
 
+/* Light / Dark tokens (used as CSS fallbacks; Tailwind class variants will be primary) */
+:root {
+  --site-bg: #ffffff;
+  --site-text: #0f172a; /* slate-900 */
+}
+
+.dark {
+  --site-bg: #0b1220; /* very dark background */
+  --site-text: #e6eef8; /* light text */
+}
+
+body {
+  background-color: var(--site-bg);
+  color: var(--site-text);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
 input,
 textarea,
 [contenteditable] {
