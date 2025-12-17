@@ -17,8 +17,11 @@ const Timeline = () => {
         </h2>
 
         <div className="relative">
-          {/* Center Line */}
+          {/* Center Line (desktop) */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-900 -translate-x-1/2" />
+
+          {/* Single vertical line for mobile to avoid repeating per-item lines */}
+          <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-900" />
 
           <div className="space-y-12">
             {events.map((event, index) => {
@@ -56,10 +59,8 @@ const Timeline = () => {
                   </div>
 
                   {/* Mobile Layout */}
-                  <div className="md:hidden relative pl-10">
-                    <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-900">
-                      <div className="absolute -left-1.5 top-5 w-3 h-3 rounded-full bg-blue-500 border-2 border-white" />
-                    </div>
+                  <div className="md:hidden relative pl-12">
+                    <div className="absolute left-6 top-5 w-3 h-3 rounded-full bg-blue-500 border-2 border-white -translate-x-1/2" />
                     <div className="pl-4">
                       <span className="block text-sm font-semibold text-blue-600 dark:text-blue-300 mb-2">
                         {event.date}
