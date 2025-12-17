@@ -1,12 +1,61 @@
 import React from "react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { UserGroupIcon } from '@hugeicons/core-free-icons';
+import { CheckmarkBadge03Icon } from '@hugeicons/core-free-icons';
+import { MoneySecurityIcon } from '@hugeicons/core-free-icons';
 
-const StatCard = ({ title, subtitle, children }) => (
-  <div className="flex flex-col items-center text-center bg-white/60 dark:bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-md w-40">
-    <div className="mb-2">{children}</div>
-    <div className="text-sm font-semibold dark:text-gray-100">{title}</div>
-    <div className="text-xs text-gray-600 dark:text-gray-300">{subtitle}</div>
-  </div>
-);
+const statColors = [
+  {
+    bg: 'hover:border-[#f50e40]/15 hover:bg-[#f50e40]/5',
+    text: 'group-hover:text-[#f50e40]',
+  },
+  {
+    bg: 'hover:border-[#420ef5]/15 hover:bg-[#420ef5]/5',
+    text: 'group-hover:text-[#420ef5]',
+  },
+  {
+    bg: 'hover:border-[#21b924]/15 hover:bg-[#21b924]/5',
+    text: 'group-hover:text-[#21b924]',
+  },
+];
+
+
+const StatCard = ({ title, subtitle, children, index }) => {
+  const color = statColors[index % statColors.length];
+
+  return (
+    <div
+      className={`
+        group
+        flex flex-col items-center text-center
+        bg-[#98c2c9]/40 dark:bg-[#1f2937]/70
+        backdrop-blur-md
+        p-4 rounded-xl w-40
+        border border-white/20 dark:border-white/10
+        shadow-sm hover:shadow-lg
+        transition-all duration-300
+        ${color.bg}
+      `}
+    >
+      <div
+        className={`mb-2 transition-colors duration-300 ${color.text}`}
+      >
+        {children}
+      </div>
+
+      <div
+        className={`text-sm font-semibold text-gray-900 dark:text-white
+                    transition-colors duration-300 ${color.text}`}
+      >
+        {title}
+      </div>
+
+      <div className="text-xs text-gray-800 dark:text-white/70">
+        {subtitle}
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -35,55 +84,16 @@ const About = () => {
           PARTICIPATION DETAILS
         </h4>
         <div className="flex justify-center gap-6 flex-wrap">
-          <StatCard title="Team Size" subtitle="1–3 members">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m6-5a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
+          <StatCard index={0} title="Team Size" subtitle="1–3 members">
+            <HugeiconsIcon icon={UserGroupIcon} />
           </StatCard>
 
-          <StatCard title="Registration Fee" subtitle="Free of cost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2M12 2v2m0 16v2"
-              />
-            </svg>
+          <StatCard index={1} title="Registration Fee" subtitle="Free of cost">
+            <HugeiconsIcon icon={MoneySecurityIcon} />
           </StatCard>
 
-          <StatCard title="Eligibility" subtitle="Open to all">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 16h-1v-4h-1m4-4h.01M12 6v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+          <StatCard index={2} title="Eligibility" subtitle="Open to all">
+            <HugeiconsIcon icon={CheckmarkBadge03Icon} />
           </StatCard>
         </div>
       </section>

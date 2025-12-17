@@ -1,6 +1,7 @@
 import React from 'react';
 import bgImage from '../../assets/bg.jpg';
 import titleImage from '../../assets/title.png';
+import DevfolioButton from '../../Components/DevfolioButton';
 
 const HeroWithClouds = () => {
   return (
@@ -115,6 +116,7 @@ const HeroWithClouds = () => {
         <button className="px-10 py-4 bg-blue-500 text-white text-lg rounded-full hover:bg-blue-600 transition-all shadow-lg">
           Get Started
         </button>
+        {/* <DevfolioButton /> */}
       </div>
       
       {/* Cloud Animations */}

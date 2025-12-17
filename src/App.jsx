@@ -54,131 +54,6 @@ function App() {
       {/* Spacer between Hero and About */}
       <div className="relative z-10" style={{ height: '1px', marginTop: '-1px' }}></div>
 
-      {/* Background Decorative Elements */}
-      <div className="fixed inset-0 pointer-events-none -z-0">
-        {/* Large Blue Circle - Top Left */}
-        <div
-          className="absolute rounded-full opacity-10"
-          style={{
-            top: "15%",
-            left: "5%",
-            width: "300px",
-            height: "300px",
-            background: "#4285f4",
-            filter: "blur(50px)",
-          }}
-        />
-
-        <div
-          className="absolute rounded-full opacity-15"
-          style={{
-            top: "10%",
-            left: "-120px",
-            width: "320px",
-            height: "320px",
-            background: "#4285f4",
-            filter: "blur(70px)",
-          }}
-        />
-
-        {/* Purple Blob - Lower Left */}
-        <div
-          className="absolute rounded-[35%] opacity-15"
-          style={{
-            bottom: "15%",
-            left: "-140px",
-            width: "300px",
-            height: "300px",
-            background: "#8b5cf6",
-            filter: "blur(80px)",
-            transform: "rotate(-20deg)",
-          }}
-        />
-
-        {/* Teal Accent - Mid Left */}
-        <div
-          className="absolute rounded-full opacity-10"
-          style={{
-            top: "55%",
-            left: "-100px",
-            width: "220px",
-            height: "220px",
-            background: "#14b8a6",
-            filter: "blur(60px)",
-          }}
-        />
-
-        {/* RIGHT SIDE DECORATIONS */}
-
-        {/* Yellow Glow - Upper Right */}
-        <div
-          className="absolute rounded-full opacity-15"
-          style={{
-            top: "12%",
-            right: "-110px",
-            width: "260px",
-            height: "260px",
-            background: "#f59e0b",
-            filter: "blur(60px)",
-          }}
-        />
-
-        {/* Pink Blob - Center Right */}
-        <div
-          className="absolute rounded-[40%] opacity-15"
-          style={{
-            top: "45%",
-            right: "-150px",
-            width: "340px",
-            height: "340px",
-            background: "#ec4899",
-            filter: "blur(90px)",
-            transform: "rotate(35deg)",
-          }}
-        />
-
-        {/* Teal Glow - Bottom Right */}
-        <div
-          className="absolute rounded-full opacity-10"
-          style={{
-            bottom: "10%",
-            right: "-120px",
-            width: "280px",
-            height: "280px",
-            background: "#14b8a6",
-            filter: "blur(70px)",
-          }}
-        />
-      </div>
-
-      {/* Soft Green Glow - Left Center */}
-      <div
-        className="absolute rounded-full opacity-12"
-        style={{
-          top: "35%",
-          left: "-160px",
-          width: "260px",
-          height: "260px",
-          background: "#7ade9fff", // green-500
-          filter: "blur(80px)",
-        }}
-      />
-
-
-      {/* Soft Red Glow - Right Lower */}
-      <div
-        className="absolute rounded-full opacity-10"
-        style={{
-          bottom: "30%",
-          right: "-160px",
-          width: "260px",
-          height: "260px",
-          background: "#b20f0fff", // red-500
-          filter: "blur(85px)",
-        }}
-      />
-
-
       <div className="relative">
 
         <div className="relative z-10">
@@ -218,7 +93,7 @@ function App() {
             </div>
           </section>
           
-          <section id="faq" className="relative pt-12" style={{ minHeight: '85vh' }}>
+          <section id="faq" className="relative pt-8" style={{ minHeight: '65vh' }}>
             <div
               className="absolute inset-0 -z-10"
               style={{
@@ -229,11 +104,25 @@ function App() {
                 filter: 'brightness(0.9)'
               }}
             />
-            <div className="container mx-auto px-6 h-full flex items-start justify-center pt-12">
+            <div className="container mx-auto px-6 h-full flex items-start justify-center pt-8">
               <div className="max-w-4xl w-full bg-white/30 dark:bg-neutral-900/40 backdrop-blur-md rounded-xl p-8 shadow-lg">
                 <FAQ />
               </div>
             </div>
+          </section>
+
+          {/* small gap so we can see background image below FAQ before footer */}
+          <section className="relative h-36">
+            <div
+              className="absolute inset-0 -z-10"
+              style={{
+                backgroundImage: `url(${fullBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                filter: 'brightness(0.9)'
+              }}
+            />
           </section>
         </div>
       </div>

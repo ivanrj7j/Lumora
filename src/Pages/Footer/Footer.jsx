@@ -3,7 +3,7 @@ import { Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer style={styles.footer}>
+    <footer style={styles.footer} className="bg-white/30 dark:bg-neutral-900/40 backdrop-blur-md">
       <div style={styles.inner}>
         <div style={styles.socialContainer}>
           <a
@@ -40,7 +40,7 @@ const styles = {
     width: "100%",
     padding: "24px 0",
     textAlign: "center",
-    background: "transparent",
+
   },
   inner: {
     maxWidth: "1100px",
