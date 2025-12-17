@@ -31,7 +31,7 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
     <>
       {/* GDG Logo - Top Left */}
       <div className="absolute top-6 left-6 md:left-10 z-30">
-        <div className="flex flex-col items-center px-5 py-1 rounded-full bg-white/45 backdrop-blur-md border border-white/30 shadow-lg">
+        <div className="flex flex-col items-center px-5 py-1 rounded-full bg-white/45 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/10 shadow-lg">
           <img
             src={gdg}
             alt="Google Developer Groups Logo"
@@ -41,24 +41,24 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
       </div>
 
       {/* Desktop Navigation - Top Right (only ABOUT and CONTACT) */}
-      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-3 py-2 rounded-full bg-[#98c2c9] border border-white/30 shadow-lg">
+      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-3 py-2 rounded-full bg-[#98c2c9] dark:bg-[#1f2937] border border-white/30 dark:border-white/10 shadow-lg">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => handleScroll(item.id)}
-            className="text-black/90 text-sm px-4 font-medium hover:text-black hover:opacity-100 transition-opacity"
+            className="text-black/90 dark:text-white text-sm px-4 font-medium hover:text-black dark:hover:text-white hover:opacity-100 transition-opacity"
           >
             {item.label}
           </button>
         ))}
-        <button onClick={handleToggleTheme} className="ml-2 p-2 rounded-full bg-white/30 border border-white/20">
+        <button onClick={handleToggleTheme} className="ml-2 p-2 rounded-full bg-white/30 dark:bg-white/10 border border-white/20 dark:border-white/10 text-black dark:text-white">
           {effectiveIsDark ? <Sun size={18} /> : <Moon size={18} />}
         </button>
       </div>
 
       {/* Mobile Hamburger Button */}
       <button
-        className="md:hidden fixed top-7 right-6 z-30 text-black bg-white/45 backdrop-blur-md border border-white/30 rounded-full p-2 shadow-lg"
+        className="md:hidden fixed top-7 right-6 z-30 text-black dark:text-white bg-white/45 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/10 rounded-full p-2 shadow-lg"
         onClick={() => setIsOpen(true)}
       >
         <Menu size={25} />
@@ -74,11 +74,11 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
 
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white/45 backdrop-blur-md border-l border-white/30 z-50 transform transition-transform duration-300 md:hidden
+        className={`fixed top-0 right-0 h-full w-64 bg-white/45 dark:bg-neutral-900/70 backdrop-blur-md border-l border-white/30 dark:border-white/10 z-50 transform transition-transform duration-300 md:hidden
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
-          className="absolute top-5 right-5 text-black"
+          className="absolute top-5 right-5 text-black dark:text-white"
           onClick={() => setIsOpen(false)}
         >
           <X size={28} />
@@ -89,13 +89,13 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`text-black/90 text-lg text-left font-medium px-4 py-2 rounded-lg transition-all ${item.hover} hover:backdrop-blur-sm`}
+              className={`text-black/90 dark:text-white text-lg text-left font-medium px-4 py-2 rounded-lg transition-all ${item.hover} hover:backdrop-blur-sm`}
             >
               {item.label}
             </button>
           ))}
           <div className="pt-4">
-            <button onClick={handleToggleTheme} className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/30 border border-white/20">
+            <button onClick={handleToggleTheme} className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/30 dark:bg-white/10 border border-white/20 dark:border-white/10 text-black dark:text-white">
               {effectiveIsDark ? <Sun size={16} /> : <Moon size={16} />}
               <span className="font-medium text-sm">Toggle Theme</span>
             </button>
