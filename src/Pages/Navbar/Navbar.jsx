@@ -21,10 +21,10 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
   };
 
   const navItems = [
-    { label: "HOME", id: "home", hover: "hover:bg-green-500 hover:text-white" },
-    { label: "ABOUT", id: "about", hover: "hover:bg-red-500 hover:text-white" },
-    { label: "TIMELINE", id: "timeline", hover: "hover:bg-blue-500 hover:text-white" },
-    { label: "FAQ", id: "faq", hover: "hover:bg-yellow-400 hover:text-black" }
+    { label: "HOME", id: "home", color: "#21b924" },
+    { label: "ABOUT", id: "about", color: "#f50e40" },
+    { label: "TIMELINE", id: "timeline", color: "#420ef5" },
+    { label: "FAQ", id: "faq", color: "#f5da0e" }
   ];
 
   return (
@@ -43,13 +43,22 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
       {/* Desktop Navigation - Top Right (only ABOUT and CONTACT) */}
       <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-3 py-2 rounded-full bg-[#98c2c9] dark:bg-[#1f2937] border border-white/30 dark:border-white/10 shadow-lg">
         {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => handleScroll(item.id)}
-            className="text-black/90 dark:text-white text-sm px-4 font-medium hover:text-black dark:hover:text-white hover:opacity-100 transition-opacity"
-          >
-            {item.label}
-          </button>
+          <div key={item.id} className={`group relative group-${item.id}`}>
+            <button
+              onClick={() => handleScroll(item.id)}
+              className={`text-black/90 dark:text-white text-sm px-4 font-medium py-2 rounded-md transition-colors duration-200 border border-transparent hover:opacity-100`}
+            >
+              <span className={`transition-colors duration-200`}>
+                {item.label}
+              </span>
+            </button>
+            {/* only change text color on hover; remove background/border */}
+            <style>{`
+              .group-${item.id}:hover button span {
+                color: ${item.color};
+              }
+            `}</style>
+          </div>
         ))}
         <button onClick={handleToggleTheme} className="ml-2 p-2 rounded-full bg-white/30 dark:bg-white/10 border border-white/20 dark:border-white/10 text-black dark:text-white">
           {effectiveIsDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -89,7 +98,13 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`text-black/90 dark:text-white text-lg text-left font-medium px-4 py-2 rounded-lg transition-all ${item.hover} hover:backdrop-blur-sm`}
+              className={`text-black/90 dark:text-white text-lg text-left font-medium px-4 py-2 rounded-lg transition-colors duration-150 hover:backdrop-blur-sm border border-transparent`}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = item.color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '';
+                }}
             >
               {item.label}
             </button>
