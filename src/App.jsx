@@ -6,6 +6,7 @@ import Timeline from './Pages/Timeline/Timeline.jsx';
 import FAQ from './Pages/FAQ/faq.jsx';
 import Footer from './Pages/Footer/Footer.jsx';
 import CustomCursor from './Components/CustomCursor';
+import fullBg from "./assets/full.jpg";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -185,7 +186,7 @@ function App() {
             <div
               className="absolute inset-0 -z-10"
               style={{
-                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundImage: `url(${fullBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
