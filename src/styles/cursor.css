@@ -66,3 +66,13 @@ body {
     opacity: 1;
   }
 }
+
+/* Hide custom cursor on touch devices (no hover / coarse pointer) */
+@media (hover: none), (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+} 
