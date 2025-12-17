@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import gdg from "../../assets/gdg2.png";
 
-const Navbar = () => {
+const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const effectiveIsDark = theme === 'dark' || (theme === 'system' && prefersDark);
+
+  const handleToggleTheme = () => {
+    onSetTheme(effectiveIsDark ? 'light' : 'dark');
+  };
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -34,7 +41,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation - Top Right (only ABOUT and CONTACT) */}
-      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-6 py-3 rounded-full bg-[#98c2c9] border border-white/30 shadow-lg">
+      <div className="hidden md:flex items-center fixed top-6 right-10 z-30 px-3 py-2 rounded-full bg-[#98c2c9] border border-white/30 shadow-lg">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -44,6 +51,9 @@ const Navbar = () => {
             {item.label}
           </button>
         ))}
+        <button onClick={handleToggleTheme} className="ml-2 p-2 rounded-full bg-white/30 border border-white/20">
+          {effectiveIsDark ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
       </div>
 
       {/* Mobile Hamburger Button */}
@@ -84,6 +94,12 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
+          <div className="pt-4">
+            <button onClick={handleToggleTheme} className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/30 border border-white/20">
+              {effectiveIsDark ? <Sun size={16} /> : <Moon size={16} />}
+              <span className="font-medium text-sm">Toggle Theme</span>
+            </button>
+          </div>
         </div>
       </div>
     </>
