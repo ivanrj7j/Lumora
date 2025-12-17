@@ -204,7 +204,7 @@ function App() {
             <div
               className="absolute inset-0 -z-10"
               style={{
-                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundImage: `url(${fullBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
@@ -222,7 +222,7 @@ function App() {
             <div
               className="absolute inset-0 -z-10"
               style={{
-                backgroundImage: 'url(/src/assets/full.jpg)',
+                backgroundImage: `url(${fullBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
