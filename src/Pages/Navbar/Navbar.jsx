@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import gdg from "../../assets/gdg2.png";
 
-const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
+const Navbar = ({ theme = 'system', onSetTheme = () => { } }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -67,9 +67,13 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
 
       {/* Mobile Hamburger Button */}
       <button
-        className="md:hidden fixed top-7 right-6 z-30 text-black dark:text-white bg-white/45 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/10 rounded-full p-2 shadow-lg"
+        className="md:hidden fixed top-7 right-6 z-30 text-black dark:text-white 
+             bg-[#98c2c9] dark:bg-[#1f2937]
+             backdrop-blur-md border border-white/30 dark:border-white/10 
+             rounded-full p-2 shadow-lg"
         onClick={() => setIsOpen(true)}
       >
+
         <Menu size={25} />
       </button>
 
@@ -99,12 +103,12 @@ const Navbar = ({ theme = 'system', onSetTheme = () => {} }) => {
               key={item.id}
               onClick={() => handleScroll(item.id)}
               className={`text-black/90 dark:text-white text-lg text-left font-medium px-4 py-2 rounded-lg transition-colors duration-150 hover:backdrop-blur-sm border border-transparent`}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = item.color;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '';
-                }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = item.color;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '';
+              }}
             >
               {item.label}
             </button>

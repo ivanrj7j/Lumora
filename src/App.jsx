@@ -5,14 +5,14 @@ import About from './Pages/About/About';
 import Timeline from './Pages/Timeline/Timeline.jsx';
 import FAQ from './Pages/FAQ/faq.jsx';
 import Footer from './Pages/Footer/Footer.jsx';
-import CustomCursor from './components/CustomCursor';
+import CustomCursor from './Components/CustomCursor';
 
 function App() {
   const [theme, setTheme] = useState(() => {
     try {
       return localStorage.getItem('theme') || 'system';
     } catch (e) {
-      return 'system';
+      console.log('Error',e);
     }
   });
 
@@ -30,7 +30,9 @@ function App() {
     setTheme(newPref);
     try {
       localStorage.setItem('theme', newPref);
-    } catch (e) {}
+    } catch (e) {
+      console.log('Error',e);
+    }
   };
 
   const backgroundStyle = effectiveIsDark
