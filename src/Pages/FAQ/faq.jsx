@@ -103,7 +103,7 @@ const FAQ = () => {
                 openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="px-4 py-3 sm:px-5 sm:py-4 text-xs sm:text-sm text-gray-200 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
+              <div className="px-4 py-3 sm:px-5 sm:py-4 text-xs sm:text-sm text-gray-800 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
                 {faq.answer}
               </div>
             </div>
