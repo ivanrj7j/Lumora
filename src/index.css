@@ -34,3 +34,34 @@ textarea,
   caret-color: var(--cursor-blue);
 }
 
+/* Gradient Bridge - Smooth transition between hero and content sections */
+.gradient-bridge {
+  position: relative;
+  height: 30px;
+  margin-top: -15px;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.gradient-bridge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    rgba(223, 239, 239, 0) 0%,
+    rgba(223, 239, 239, 0.05) 100%
+  );
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+}
+
+/* Use the same soft bridge for all themes — image is bright so one gradient suffices */
+@media (max-width: 640px) {
+  .gradient-bridge {
+    height: 220px;
+    margin-top: -110px;
+  }
+}
