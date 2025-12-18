@@ -37,8 +37,8 @@ textarea,
 /* Gradient Bridge - Smooth transition between hero and content sections */
 .gradient-bridge {
   position: relative;
-  height: 30px;
-  margin-top: -15px;
+  height: 20px;
+  margin-top: -10px;
   pointer-events: none;
   z-index: 15;
 }
@@ -61,7 +61,7 @@ textarea,
 /* Use the same soft bridge for all themes — image is bright so one gradient suffices */
 @media (max-width: 640px) {
   .gradient-bridge {
-    height: 220px;
-    margin-top: -110px;
+    height: 40px;
+    margin-top: -20px;
   }
 }
